@@ -1,4 +1,4 @@
-.csv
-.png
-.docx
-.xlsx
+*.csv
+*.png
+*.docx
+*.xlsx
