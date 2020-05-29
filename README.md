@@ -1,6 +1,6 @@
 <img src=images/Hospital-Ward-image-2.jpg width="875" height="500">
 
-## Predicting patients with poor outcomes (hospital readmissions) from Medical Insurance Claims Data 
+## Predicting patients with poor outcomes (hospital readmissions) from Medical Insurance Claims Data (Readme - WIP)
 
 In this project, I am trying to predict patients with poor outcomes by using the frequency and duration of patient visit, their uasge of prescription drugs and other products & services. I do not have access to any medical information such as vitals, test results, scans or any other kind of diagnostic tests.
 
@@ -83,11 +83,3 @@ Random Forest seems to have a good balance between model accuracy and resource u
 2. Predicting Chronic Disease for a patient
 3. Bundling procedures & payments (based on predicting future medical conditions) for preemptive meaasures 
 4. Flag high cost hospitals and physicians with poor outcomes
-
-  
-  
-  
-  
-#### poor outcomes of (without much medical information about the patients? 
-
-Prediciting Poor Outcomes from Medical Insurance Claims data with very limited medical information. 
