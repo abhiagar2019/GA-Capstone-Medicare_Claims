@@ -1,4 +1,4 @@
-<img src=images/Hospital-Ward-image-2.jpg width="850" height="550">
+<img src=images/Hospital-Ward-image-2.jpg width="875" height="550">
 
 ## Predicting patients with poor outcomes (hospital readmissions) from Medical Insurance Claims Data 
 
@@ -34,7 +34,7 @@ Data was collected from Center for Medicare and Medicaid Services (CMS), USA
 	
 ### 2. Data Wrangling & Preparation
 
- <img src=images/size.jpg width="400" height="200">
+ <img src=images/size.png width="400" height="200">
  
 1. Each patient can have multiple inpatient and outpatient visits
 2. Each visit can have multiple ICD9 (diagnosis) assigned for each visit
@@ -46,17 +46,18 @@ Data was collected from Center for Medicare and Medicaid Services (CMS), USA
   
   ### 3. Exploratory Data Analysis 
   
-   <img src=images/num_inpt_admissions.png width="300" height="200"> <img src=images/los.png width="300" height="200">
-   <img src=images/total_inpt_diagnosis.png width="300" height="200"> <img src=images/total_inpt_procedures.png width="300" height="200">
+   <img src=images/num_inpt_admissions.png width="400" height="300"> <img src=images/los.png width="400" height="300">
+   
+   <img src=images/total_inpt_diagnosis.png width="400" height="300"> <img src=images/total_inpt_procedures.png width="400" height="300">
   
   ### 4. Feature Engineering
-  <img src=images/summarized_by_patient.png width="400" height="200">
+  <img src=images/summarized_by_patient.png width="800" height="500">
   
   
   ### 7. Comparing all the classification model's performance 
-   <img src=images/scores.png width="400" height="300">
+   <img src=images/scores.png width="600" height="400">
    
-   <img src=images/feature_imp_random_forest.png width="400" height="300">
+   <img src=images/feature_imp_random_forest.png width="600" height="400">
   
   ### 8. Conclusion and key learning
   Data wrangling is fast in SQL
