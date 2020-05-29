@@ -1,4 +1,4 @@
-<img src=images/Hospital-Ward-image-2.jpg width="700" height="500">
+<img src=images/Hospital-Ward-image-2.jpg width="850" height="550">
 
 ## Predicting patients with poor outcomes (hospital readmissions) from Medical Insurance Claims Data 
 
@@ -46,18 +46,17 @@ Data was collected from Center for Medicare and Medicaid Services (CMS), USA
   
   ### 3. Exploratory Data Analysis 
   
-   <img src=images/num_inpt_admissions.png width="200" height="150">
-   <img src=images/los.png width="200" height="150">
-   <img src=images/total_inpt_diagnosis.png width="200" height="150">
-   <img src=images/total_inpt_procedures.png width="200" height="150">
+   <img src=images/num_inpt_admissions.png width="300" height="200"> <img src=images/los.png width="300" height="200">
+   <img src=images/total_inpt_diagnosis.png width="300" height="200"> <img src=images/total_inpt_procedures.png width="300" height="200">
   
   ### 4. Feature Engineering
   <img src=images/summarized_by_patient.png width="400" height="200">
   
   
   ### 7. Comparing all the classification model's performance 
-   <img src=images/scores.jpg width="400" height="200">
-   <img src=images/feature_imp_random_forest.png width="400" height="200">
+   <img src=images/scores.png width="400" height="300">
+   
+   <img src=images/feature_imp_random_forest.png width="400" height="300">
   
   ### 8. Conclusion and key learning
   Data wrangling is fast in SQL
@@ -77,7 +76,6 @@ Random Forest seems to have a good balance between model accuracy and resource u
 3. Bundling procedures & payments (based on predicting future medical conditions) for preemptive meaasures 
 4. Flag high cost hospitals and physicians with poor outcomes
 
-  
   
   
   
