@@ -46,11 +46,18 @@ Data was collected from Center for Medicare and Medicaid Services (CMS), USA
   
   ### 3. Exploratory Data Analysis 
   
+   <img src=images/corelation_matrix.png width="600" height="450">
+   
+   <img src=images/feature_distribution.png width="600" height="450">
+   
+  
+  ### 4. Feature Engineering
+  
    <img src=images/num_inpt_admissions.png width="425" height="300"> <img src=images/los.png width="425" height="300">
    
    <img src=images/total_inpt_diagnosis.png width="425" height="300"> <img src=images/total_inpt_procedures.png width="425" height="300">
-  
-  ### 4. Feature Engineering
+   
+   
   <img src=images/summarized_by_patient.png width="900" height="350">
   
   
