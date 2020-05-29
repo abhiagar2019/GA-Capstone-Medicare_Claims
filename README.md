@@ -10,7 +10,20 @@ Overall 20% of the sickest patients consume 80% of the healthcare resources, be 
 
 ### Can the insurer with only limited medical information such as disease diagnosis code, billing for the equipments, services and drugs used be able to predict the poor outcome of its clients. This project is an attempt to try this.
 
-<img src=images/health_insurance.jpg width="500" height="400">
+<img src=images/health_insurance.jpg width="400" height="300">
+
+
+Steps:
+1. Data Acquisition
+2. Data Wrangling & Preparation
+  2 a. Creating PostgreSQL database
+3. Exploratory Data Analysis 
+4. Feature Engineering
+5. Machine Learning Models 
+  5 a. Setting up and running the models in Tensorflow environment in Amazon Web Services (AWS)
+6. Hyper parameter tuning (including dealing with class imbalance)
+7. Comparing all the classification model's performance 
+8. Conclusion and future work
 
 #### poor outcomes of (without much medical information about the patients? 
 
