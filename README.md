@@ -10,7 +10,7 @@ Overall 20% of the sickest patients consume 80% of the healthcare resources, be 
 
 ### Can the insurer with only limited medical information such as disease diagnosis code, billing for the equipments, services and drugs used be able to predict the poor outcome of its clients. This project is an attempt to try this.
 
-<img src=images/health_insurance.jpg width="275" height="200">
+<img src=images/health_insurance.jpg width="265" height="200">
 
 
 Steps:
@@ -42,22 +42,22 @@ Data was collected from Center for Medicare and Medicaid Services (CMS), USA
  
   ### 2 a. Creating PostgreSQL database
   
-  <img src=images/postgreSQL.png width="450" height="300">
+  <img src=images/postgreSQL.png width="500" height="300">
   
   ### 3. Exploratory Data Analysis 
   
-   <img src=images/num_inpt_admissions.png width="400" height="300"> <img src=images/los.png width="400" height="300">
+   <img src=images/num_inpt_admissions.png width="450" height="300"> <img src=images/los.png width="450" height="300">
    
-   <img src=images/total_inpt_diagnosis.png width="400" height="300"> <img src=images/total_inpt_procedures.png width="400" height="300">
+   <img src=images/total_inpt_diagnosis.png width="450" height="300"> <img src=images/total_inpt_procedures.png width="450" height="300">
   
   ### 4. Feature Engineering
-  <img src=images/summarized_by_patient.png width="900" height="400">
+  <img src=images/summarized_by_patient.png width="900" height="350">
   
   
   ### 7. Comparing all the classification model's performance 
-   <img src=images/scores.png width="800" height="600">
+   <img src=images/scores.png width="700" height="500">
    
-   <img src=images/feature_imp_random_forest.png width="600" height="400">
+   <img src=images/feature_imp_random_forest.png width="700" height="500">
   
   ### 8. Conclusion and key learning
   Data wrangling is fast in SQL
