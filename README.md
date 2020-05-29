@@ -67,14 +67,14 @@ Data was collected from Center for Medicare and Medicaid Services (CMS), USA
    <img src=images/feature_imp_random_forest.png width="700" height="500">
   
   ### 8. Conclusion and key learning
-  Data wrangling is fast in SQL
-Oversampling improves the accuracy (Logistic Regression from 0.75 to 0.86)
-Polynomial features improved accuracy
-PCA reduced my features from 14,000 to 500 with 82% cumulative variance
-KNN was the slowest
-Ensemble methods gave the best results
-Gradient Boosting was the clear winner as it reduced bias. It had higher false positives hence lower precision for class 1 (preferred)
-Random Forest seems to have a good balance between model accuracy and resource utilization (7mins vs 25 mins for GB)
+  1. Data wrangling is fast in SQL
+2. Oversampling improves the accuracy (Logistic Regression from 0.75 to 0.86)
+3. Polynomial features improved accuracy
+4. PCA reduced my features from 14,000 to 500 with 82% cumulative variance
+5. KNN was the slowest
+6. Ensemble methods gave the best results
+7. Gradient Boosting was the clear winner as it reduced bias. It had higher false positives hence lower precision for class 1 (preferred)
+8. Random Forest seems to have a good balance between model accuracy and resource utilization (7mins vs 25 mins for Gradient Boosting)
 
   
   ### 9. Future work
