@@ -14,7 +14,7 @@ Overall 20% of the sickest patients consume 80% of the healthcare resources, be 
 
 
 Steps:
-1. Data Acquisition
+1. Data Collection
 2. Data Wrangling & Preparation
   2 a. Creating PostgreSQL database
 3. Exploratory Data Analysis 
@@ -25,6 +25,24 @@ Steps:
 7. Comparing all the classification model's performance 
 8. Conclusion and future work
 
+
+### 1. Data Collection
+Data was collected from Center for Medicare and Medicaid Services (CMS), USA
+
+<img src=images/CMS.png width="200" height="100">
+	
+### 2. Data Wrangling & Preparation
+
+ <img src=images/size.jpg width="400" height="200">
+ 
+1. Each patient can have multiple inpatient and outpatient visits
+2. Each visit can have multiple ICD9 (diagnosis) assigned for each visit
+3. There are 20,000 disease, 13,000 HCPCS and 4,000 procedure codes
+ 
+  ### 2 a. Creating PostgreSQL database
+  
+  <img src=images/postgreSQL.png width="400" height="200">
+  
 #### poor outcomes of (without much medical information about the patients? 
 
 Prediciting Poor Outcomes from Medical Insurance Claims data with very limited medical information. 
