@@ -28,9 +28,11 @@ Steps:
 
 
 ### 1. Data Collection
-Data was collected from Center for Medicare and Medicaid Services (CMS), USA
+Data was collected from Center for Medicare and Medicaid Services (CMS), USA. It contains data for around 7m patients, with 1.3m inpatient, 16m outpatient visit and 111m prescription drug events and other medical claims data. 
 
-<img src=images/CMS.png width="220" height="100">
+<img src=images/CMS.png width="220" height="100"> 
+
+I started with around quarter million patients for exploratory data analysis. After seeing some trends between predictor  and the target variables, finally I used one-fifth of the available data. Prime reason for using the limited amount of data was because of limitation of RAM on my machine and to limit the expenditure on AWS.
 	
 ### 2. Data Wrangling & Preparation
 
@@ -42,7 +44,7 @@ Data was collected from Center for Medicare and Medicaid Services (CMS), USA
  
   ### 2 a. Creating PostgreSQL database
   
-  <img src=images/postgresql_database.png width="500" height="300">
+  <img src=images/postgre_database.png width="500" height="300">
   
   ### 3. Exploratory Data Analysis 
   
