@@ -46,20 +46,15 @@ There are around 20,000 (ICD9) disease, 13,000 HCPCS and 4,000 procedure codes.
 
 <img src=images/pt1.png width="900" height="300"> 
 
+Multiple visits of a single patient.
 (Note: The raw data had diagnosis codes which I have joined to other lookup tables to get the description of each code)
 
-
-
-2. Each visit can have multiple ICD9 (diagnosis) assigned for each visitWhen various tables (patient, inpatient claims, outpatient claims etc
-
-
- 
-1. Each patient can have multiple inpatient and outpatient visits
-2. Each visit can have multiple ICD9 (diagnosis) assigned for each visit
-3. There are 20,000 disease, 13,000 HCPCS and 4,000 procedure codes
+So, when we join patient, inpatient claims, outpatient claims table using patient_id, we get multiple rows per patient, each ranging from 10 to 60 different diagnosis/HCPCS/Procedures codes per row. When I vectorized the codes and tried to use each code as a separate feature, I got over 14,000 features (predictor variable) for my dataset (which although after using PCA I was able to reduce it to 600 features with over 82% cumulative variance).
  
   ### 2 a. Creating PostgreSQL database
   
+Dealing with such large data, especailly which required some cleaning, feature engineering and SQl joins (over 60 joins) for the code lookups, it was best to create a SQL database.
+
   <img src=images/postgre_database.png width="500" height="300">
   
   ### 3. Exploratory Data Analysis 
