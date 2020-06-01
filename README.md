@@ -1,6 +1,6 @@
 <img src=images/Hospital-Ward-image-2.jpg width="875" height="500">
 
-## Predicting patients with poor outcomes (hospital readmissions) from Medical Insurance Claims Data (Readme - WIP)
+## Predicting patients with poor outcomes (hospital readmissions) from Medical Insurance Claims Data (No medical information except disease codes - WIP)
 
 In this project, I am trying to predict patients with poor outcomes by using the frequency and duration of patient visit, their usage of prescription drugs and other products & services. I do not have access to any medical information such as vitals, test results, scans or any other kind of diagnostic tests. <i> Challenge is to predict worsening of patient's health without his/her detailed medical information.</i>
 
@@ -59,7 +59,9 @@ Dealing with such large data, especailly which required some cleaning, feature e
   
   ### 3. Exploratory Data Analysis 
   
-   <img src=images/corelation_matrix.png width="600" height="450">
+  After removing features which shows colinearity, here is the corelation matrix of the features.
+  
+   <img src=images/corelation_matrix.png width="900" height="600">
    
    <img src=images/feature_distribution.png width="600" height="450">
    
