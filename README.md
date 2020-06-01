@@ -2,7 +2,7 @@
 
 ## Predicting patients with poor outcomes (hospital readmissions) from Medical Insurance Claims Data (Readme - WIP)
 
-In this project, I am trying to predict patients with poor outcomes by using the frequency and duration of patient visit, their uasge of prescription drugs and other products & services. I do not have access to any medical information such as vitals, test results, scans or any other kind of diagnostic tests.
+In this project, I am trying to predict patients with poor outcomes by using the frequency and duration of patient visit, their usage of prescription drugs and other products & services. I do not have access to any medical information such as vitals, test results, scans or any other kind of diagnostic tests. <i> Challenge is to predict worsening of patient's health without the medical information.</i>
 
 
 ### Background
@@ -42,7 +42,7 @@ Data was collected from Center for Medicare and Medicaid Services (CMS), USA
  
   ### 2 a. Creating PostgreSQL database
   
-  <img src=images/postgreSQL.png width="500" height="300">
+  <img src=images/postgresql_database.png width="500" height="300">
   
   ### 3. Exploratory Data Analysis 
   
