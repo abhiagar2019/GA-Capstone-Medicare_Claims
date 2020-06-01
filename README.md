@@ -2,13 +2,13 @@
 
 ## Predicting patients with poor outcomes (hospital readmissions) from Medical Insurance Claims Data (Readme - WIP)
 
-In this project, I am trying to predict patients with poor outcomes by using the frequency and duration of patient visit, their usage of prescription drugs and other products & services. I do not have access to any medical information such as vitals, test results, scans or any other kind of diagnostic tests. <i> Challenge is to predict worsening of patient's health without the medical information.</i>
+In this project, I am trying to predict patients with poor outcomes by using the frequency and duration of patient visit, their usage of prescription drugs and other products & services. I do not have access to any medical information such as vitals, test results, scans or any other kind of diagnostic tests. <i> Challenge is to predict worsening of patient's health without his/her detailed medical information.</i>
 
 
 ### Background
 Overall 20% of the sickest patients consume 80% of the healthcare resources, be it cost or resource occupancy. Being able to predict the outcome (usually poor outcome) of a patient early-on can not only help in taking pre-emptive efforts to manage the condition but also help in managing the workload of the healthcare system thereby reducing cost and enhancing quality of life. 
 
-### Can the insurer with only limited medical information such as disease diagnosis code, billing for the equipments, services and drugs used be able to predict the poor outcome of its clients. This project is an attempt to try this.
+### <i> Can the insurer with only limited medical information such as disease diagnosis code, billing for the equipments, services & drugs from medical claims be able to predict the poor outcome of its clients. This project is an attempt to predict this.</i>
 
 <img src=images/health_insurance.jpg width="265" height="200">
 
@@ -28,15 +28,31 @@ Steps:
 
 
 ### 1. Data Collection
-Data was collected from Center for Medicare and Medicaid Services (CMS), USA. It contains data for around 7m patients, with 1.3m inpatient, 16m outpatient visit and 111m prescription drug events and other medical claims data. 
+Data was collected from Center for Medicare and Medicaid Services (CMS), USA. It contains data for around 7m patients, with 1.3m inpatient, 16m outpatient claims and 111m prescription drug events and other carrier claims data for 2008, 2009 and 2010. 
 
 <img src=images/CMS.png width="220" height="100"> 
 
-I started with around quarter million patients for exploratory data analysis. After seeing some trends between predictor  and the target variables, finally I used one-fifth of the available data. Prime reason for using the limited amount of data was because of limitation of RAM on my machine and to limit the expenditure on AWS.
+I started with around quarter of a million patients for exploratory data analysis. After seeing some trends between predictor and the target variables, finally I ended up using one-fifth of the available data. Prime reason for using the limited amount of data was because of limitation of RAM on my machine and to limit my expenditure on Amazon Web Services (AWS) to run the models.
+
+ <img src=images/size.png width="300" height="150">
 	
 ### 2. Data Wrangling & Preparation
 
- <img src=images/size.png width="400" height="200">
+As we know each patient can have multiple inpatient and outpatient visits. 
+
+When a patient visits the medical facility, he/she is assigned a principal (or admission) diagnosis code after initial assessment which resulted in patient's admission. He/she is assigned other secondary diagnosis codes which include comorbidities, complications, and other diagnoses that are documented by the attending physician.
+
+There are around 20,000 (ICD9) disease, 13,000 HCPCS and 4,000 procedure codes.
+
+<img src=images/pt1.png width="900" height="300"> 
+
+(Note: The raw data had diagnosis codes which I have joined to other lookup tables to get the description of each code)
+
+
+
+2. Each visit can have multiple ICD9 (diagnosis) assigned for each visitWhen various tables (patient, inpatient claims, outpatient claims etc
+
+
  
 1. Each patient can have multiple inpatient and outpatient visits
 2. Each visit can have multiple ICD9 (diagnosis) assigned for each visit
