@@ -15,13 +15,13 @@ Overall 20% of the sickest patients consume 80% of the healthcare resources, be 
 
 Steps:
 1. Data Collection
-2. Data Wrangling & Preparation
-  2 a. Creating PostgreSQL database
-3. Exploratory Data Analysis 
-4. Feature Engineering
-5. Machine Learning Models 
+2 a. Creating PostgreSQL database
+2 b. Data Wrangling & Preparation
+3. Feature Engineering
+4. Exploratory Data Analysis  
+5. Machine Learning Models (including dealing with class imbalance)
   5 a. Setting up and running the models in Tensorflow environment in Amazon Web Services (AWS)
-6. Hyper parameter tuning (including dealing with class imbalance)
+6. Hyper parameter tuning 
 7. Comparing all the classification model's performance 
 8. Conclusion and Key learning
 9. Future work
@@ -64,23 +64,61 @@ It is good to stitch the longitudinal view of the patient visits over a time-per
 
 One approach to view the diagnsos codes was to vectorize them and use each code as a separate feature. Usimng this approach, I got over 14,000 features (predictor variable) for my dataset. Postgre could handle at the max 1,600 features. So, I used Principal Component Analysis (PCA) to create a new feature space (eigen vectors) and identify the important features. Using PCA, I was able to reduce my features to approximately 600 features with over 82% cumulative variance.
   
-  ### 3. Exploratory Data Analysis 
+  ### 3. Feature Engineering
   
-  After removing features which shows colinearity, here is the corelation matrix of the features.
+  After inital explonatory data analysis, I calculated some fields such as:
+  1. length of stay (LOS)
+  2. Readmissions within 30, 60 and 90 days
+  3. Total number of inpatient admission
+  4. Total number of outpatient visits
+  5. Total number of diagnosis dosage 
+  6. Total number of prescription dosage 
+  7. Total medical equipment/supplies/services billed for
+  8. Total cost incurred for a patient (insurer + copay + aid)
+  9. Change in cost, number of visits, number of diagnosis from one year to another etc..
   
-   <img src=images/corelation_matrix.png width="900" height="600">
-   
-   <img src=images/feature_distribution.png width="600" height="450">
-   
+  <img src=images/summarized_by_patient.png width="900" height="250">
   
-  ### 4. Feature Engineering
+  ### 4.  Exploratory Data Analysis 
+  
+  My Target variable is: Readmission within 30 days
+  
+  when plotted target variable against potential engineered features (Total number of inpatient admission and 
+  Total number of diagnosis dosage), we can see a clear pattern that separates patients who are admiited vs non-admitted within 30 days of their inpatient visit.
   
    <img src=images/num_inpt_admissions.png width="425" height="300"> <img src=images/los.png width="425" height="300">
    
    <img src=images/total_inpt_diagnosis.png width="425" height="300"> <img src=images/total_inpt_procedures.png width="425" height="300">
    
+   The correlation matrix and feature distributions showed meaningful relationship with the predictor variables. They also helped in identifying and getting rid of any co-linear features. 
+  
+   <img src=images/corelation_matrix.png width="900" height="500">
    
-  <img src=images/summarized_by_patient.png width="900" height="350">
+   <img src=images/feature_distribution.png width="900" height="500">
+   
+   All the features were standardized before running the models.
+   
+  ### 5. Machine Learning Models 
+
+Baseline accuracy: 0.5
+ 
+SMOTE upsampling was used to deal with class imbalance (since there was class imbalance between patients who were re-admiited vs those who were not re-admitted within 30 days).
+ 
+ All the following classification models were implemented.
+ 
+1. Logistic Regression
+2. Polynomial Logistic Regression
+3. Decision Tree
+4. Random Forest
+5. Gradient Boosting
+6. KNN
+7. Naïve Bayes
+8. Support Vector Machine
+9. Neural Network
+  
+  ###    5 a. Setting up and running the models in Tensorflow environment in Amazon Web Services (AWS)
+  
+  ### 6. Hyper parameter tuning
   
   
   ### 7. Comparing all the classification model's performance 
