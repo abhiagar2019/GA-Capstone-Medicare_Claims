@@ -14,6 +14,17 @@ Overall 20% of the sickest patients consume 80% of the healthcare resources, be 
 
 Steps:
 
+1. Data Collection
+2 a. Creating PostgreSQL database
+2 b. Data Wrangling & Preparation
+3. Feature Engineering
+4. Exploratory Data Analysis  
+5. Machine Learning Models (including dealing with class imbalance)
+6. Setting up and running the models in Amazon Web Services (AWS) Tensorflow environment for Gridsearch
+7. Hyper-Parameter Tuning 
+8. Comparing all the classification model's performance 
+9. Conclusion and Key learning
+10. Future work
 
 
 ### 1. Data Collection
