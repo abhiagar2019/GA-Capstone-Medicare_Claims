@@ -67,7 +67,7 @@ One approach to view the diagnsos codes was to vectorize them and use each code 
   ### 3. Feature Engineering
   
   After inital explonatory data analysis, I calculated some fields such as:
-  1. length of stay (LOS)
+  1. Length of stay (LOS)
   2. Readmissions within 30, 60 and 90 days
   3. Total number of inpatient admission
   4. Total number of outpatient visits
@@ -81,7 +81,7 @@ One approach to view the diagnsos codes was to vectorize them and use each code 
   
   ### 4.  Exploratory Data Analysis 
   
-  My Target variable is: Readmission within 30 days
+ Target variable is: Readmission within 30 days
   
   when plotted target variable against potential engineered features (Total number of inpatient admission and 
   Total number of diagnosis dosage), we can see a clear pattern that separates patients who are admiited vs non-admitted within 30 days of their inpatient visit.
@@ -102,7 +102,7 @@ One approach to view the diagnsos codes was to vectorize them and use each code 
 
 Baseline accuracy: 0.5
  
-SMOTE upsampling was used to deal with class imbalance (since there was class imbalance between patients who were re-admiited vs those who were not re-admitted within 30 days).
+SMOTE over-sampling was used to deal with class imbalance (since there was class imbalance between patients who were re-admiited vs those who were not re-admitted within 30 days).
  
  All the following classification models were implemented.
  
@@ -116,10 +116,24 @@ SMOTE upsampling was used to deal with class imbalance (since there was class im
 8. Support Vector Machine
 9. Neural Network
   
-  ###    5 a. Setting up and running the models in Tensorflow environment in Amazon Web Services (AWS)
+  ###    5 a. Setting up and running the models in Amazon Web Services (AWS) Tensorflow environment
+  
+  All the base models with default settings were run on my local machine (macbook with 8gb RAM, quad core). It took several hours for each model to run which made me choose AWS to run the Gridsearches for all the models.
+  
+ I uploaded the input files (X_train, y_train, X_test, y_test) to AWS Tensorflow which had all the required packages for me (except seaborn to plot ROC and precison-recall curve). 
+ 
+ I gridsearched and downloaded the saved models back to my local computer (using joblib).
+  
   
   ### 6. Hyper parameter tuning
   
+  Extensive number of fits were performed for each model to identify the best parameters. Cross-validation and appropriate regularization parameter were chosen to avoid overfitting.
+  
+  Precision-recall, ROC curves and classficsation reports were analysed to identify the best model.
+  
+  <img src=images/precision_recall.png width="400" height="250">
+  
+  Please note high false postives were favourable as we would be better off predicting more patients who needs attention than miss patients who may be performing worse in future.
   
   ### 7. Comparing all the classification model's performance 
    <img src=images/scores.png width="700" height="500">
