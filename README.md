@@ -157,7 +157,7 @@ More Length of Stay (LOS), more number of inpatient admissions, more number of d
 4. Ensemble methods gave the best results
 5. KNN was the slowest in this case so choosing appropriate parameters for Gridsearch is important
 
-<b> It seems like poor outcome of patients (Re-admission within 30 days) can be predicted from claims only data (i.e. without much medical information) with reasonable accuracy. </b>
+<b> It seems like poor outcome of patients (Re-admission within 30 days) can be predicted from claims data only (i.e. without much medical information) with reasonable accuracy. </b>
   
  ### 10. Future work
   Since now I have data in the right format, I would like to do the following projects:
@@ -166,4 +166,4 @@ More Length of Stay (LOS), more number of inpatient admissions, more number of d
 2. Predicting Chronic Disease for a patient
 3. Outcome-based reimbursement modelling - Bundling procedures & services (based on predicting future medical conditions) for bundled payments and taking preemptive measures
 4. Flag high cost hospitals and physicians with poor outcomes
-5. Since, I have zipcodes of the health providers where services was delivered, I would like to combine with othe data such as education, income equality, public transport, demographics to understand if and why certain zip-code population has poor health conditions
+5. Since, I have zipcodes of the health providers where services was delivered, I would like to combine with othe data such as education, income in-equality, air/water quality, public transport, demographics to understand if and why certain zip-codes population has poor health conditions
