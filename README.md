@@ -151,19 +151,19 @@ One approach to view the diagnsos codes was to vectorize them and use each code 
 More Length of Stay (LOS), more number of inpatient admissions, more number of diseases (or co-morbidity) diagnosed, more number of inpatient procedures etc means higher chances of re-admission - > which is what the model has predicted quite well. 
    
  ### 9. Conclusion and key learning
-1. Data wrangling is fast in SQL
-2. Oversampling improves the accuracy (Logistic Regression from 0.75 to 0.86)
-3. Polynomial features improved accuracy
-4. PCA reduced my features from 14,000 to 500 with 82% cumulative variance
-5. KNN was the slowest
-6. Ensemble methods gave the best results
-7. Gradient Boosting was the clear winner as it reduced bias. It had higher false positives hence lower precision for class 1 (preferred)
-8. Random Forest seems to have a good balance between model accuracy and resource utilization (7mins vs 25 mins for Gradient Boosting)
+1. Model accuracy increased for Logistic Regression (from linear to Polynomial)
+2. Oversampling improved the accuracy (Polynomial Logistic Regression from 0.75 to 0.86)
+3. PCA reduced the features from 14,000+ to 600 with 82% cumulative variance, but looses interpretability
+4. Ensemble methods gave the best results
+5. KNN was the slowest in this case so choosing appropriate parameters for Gridsearch is important
 
+<b> It seems like poor outcome of patients (Re-admission within 30 days) can be predicted from claims only data (i.e. without much medical information) with reasonable accuracy. </b>
   
-  ### 10. Future work
-  Since now the data is processed, I would like to do the following projects:
-1. Cost prediction
+ ### 10. Future work
+  Since now I have data in the right format, I would like to do the following projects:
+  
+1. Predicting Cost
 2. Predicting Chronic Disease for a patient
-3. Bundling procedures & payments (based on predicting future medical conditions) for preemptive meaasures 
+3. Outcome-based reimbursement modelling - Bundling procedures & services (based on predicting future medical conditions) for bundled payments and taking preemptive measures
 4. Flag high cost hospitals and physicians with poor outcomes
+5. Since, I have zipcodes of the health providers where services was delivered, I would like to combine with othe data such as education, income equality, public transport, demographics to understand if and why certain zip-code population has poor health conditions
