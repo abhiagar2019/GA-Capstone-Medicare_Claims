@@ -15,6 +15,7 @@ Overall 20% of the sickest patients consume 80% of the healthcare resources, be 
 Steps:
 1. Data Collection
 2 a. Creating PostgreSQL database
+2 a. Creating PostgreSQL database
 2 b. Data Wrangling & Preparation
 3. Feature Engineering
 4. Exploratory Data Analysis  
