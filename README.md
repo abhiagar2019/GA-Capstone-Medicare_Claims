@@ -20,11 +20,11 @@ Steps:
 3. Feature Engineering
 4. Exploratory Data Analysis  
 5. Machine Learning Models (including dealing with class imbalance)
-  5 a. Setting up and running the models in Tensorflow environment in Amazon Web Services (AWS)
-6. Hyper parameter tuning 
-7. Comparing all the classification model's performance 
-8. Conclusion and Key learning
-9. Future work
+6. Setting up and running the models in Amazon Web Services (AWS) Tensorflow environment for Gridsearch
+7. Hyper-Parameter Tuning 
+8. Comparing all the classification model's performance 
+9. Conclusion and Key learning
+10. Future work
 
 
 ### 1. Data Collection
@@ -116,16 +116,16 @@ SMOTE over-sampling was used to deal with class imbalance (since there was class
 8. Support Vector Machine
 9. Neural Network
   
-  ###    5 a. Setting up and running the models in Amazon Web Services (AWS) Tensorflow environment
+  ### 6. Setting up and running the models in Amazon Web Services (AWS) Tensorflow environment for Gridsearch
   
   All the base models with default settings were run on my local machine (macbook with 8gb RAM, quad core). It took several hours for each model to run which made me choose AWS to run the Gridsearches for all the models.
   
  I uploaded the input files (X_train, y_train, X_test, y_test) to AWS Tensorflow which had all the required packages for me (except seaborn to plot ROC and precison-recall curve). 
  
- I gridsearched and downloaded the saved models back to my local computer (using joblib).
+ I gridsearched and downloaded the saved models back to my local computer (using joblib and pickle libraries).
   
   
-  ### 6. Hyper parameter tuning
+  ### 7. Hyper-Parameter Tuning
   
   Extensive number of fits were performed for each model to identify the best parameters. Cross-validation and appropriate regularization parameter were chosen to avoid overfitting.
   
@@ -135,12 +135,14 @@ SMOTE over-sampling was used to deal with class imbalance (since there was class
   
   Please note high false postives were favourable as we would be better off predicting more patients who needs attention than miss patients who may be performing worse in future.
   
-  ### 7. Comparing all the classification model's performance 
+  ### 8. Comparing all the classification model's performance 
+  
+  
    <img src=images/scores.png width="700" height="500">
    
    <img src=images/feature_imp_random_forest.png width="700" height="500">
   
-  ### 8. Conclusion and key learning
+  ### 9. Conclusion and key learning
   1. Data wrangling is fast in SQL
 2. Oversampling improves the accuracy (Logistic Regression from 0.75 to 0.86)
 3. Polynomial features improved accuracy
@@ -151,7 +153,7 @@ SMOTE over-sampling was used to deal with class imbalance (since there was class
 8. Random Forest seems to have a good balance between model accuracy and resource utilization (7mins vs 25 mins for Gradient Boosting)
 
   
-  ### 9. Future work
+  ### 10. Future work
   Since now the data is processed, I would like to do the following projects:
 1. Cost prediction
 2. Predicting Chronic Disease for a patient
