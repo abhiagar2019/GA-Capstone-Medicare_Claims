@@ -1,6 +1,6 @@
 <img src=images/Hospital-Ward-image-2.jpg width="875" height="500">
 
-## Predicting patients with poor outcomes (hospital readmissions) from Medical Insurance Claims Data Only (No medical information except disease codes) - WIP
+## Predicting patients with poor outcomes (hospital readmissions) from Medical Insurance Claims Data Only (No medical information except disease codes)
 
 In this project, I am trying to predict patients with poor outcomes by using the frequency and duration of patient visit, their usage of prescription drugs and other products & services. I do not have access to any medical information such as vitals, test results, scans or any other kind of diagnostic tests. <i> Challenge is to predict worsening of patient's health without his/her detailed medical information.</i>
 
