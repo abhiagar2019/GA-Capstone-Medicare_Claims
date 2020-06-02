@@ -12,10 +12,8 @@ Overall 20% of the sickest patients consume 80% of the healthcare resources, be 
 
 <img src=images/health_insurance.jpg width="265" height="200">
 
-
 Steps:
 1. Data Collection
-
 2 a. Creating PostgreSQL database
 2 b. Data Wrangling & Preparation
 3. Feature Engineering
@@ -59,7 +57,7 @@ There are around 20,000 (ICD9) disease, 13,000 HCPCS and 4,000 procedure codes t
 Multiple visits of a single patient.
 (Note: The raw data had diagnosis codes which I have joined to other lookup tables to get the description of each code)
 
-So, when we join patient, inpatient claims, outpatient claims table using patient_id, we get multiple rows per patient, each row containing between 10 and 60 different diagnosis/HCPCS/Procedures codes. 
+So, when we join patient, inpatient claims, outpatient claims table using patient_id, we get multiple rows per patient, each row containing between 10 and 60 different diagnosis/HCPCS/Procedure codes. 
 
 It is good to stitch the longitudinal view of the patient visits over a time-period and see how the disease progressed and/or new disease developed. 
 
@@ -140,11 +138,18 @@ One approach to view the diagnsos codes was to vectorize them and use each code 
   
   ### 8. Comparing all the classification model's performance 
   
+  Comparing the models based on accuracy score. 
   
-   <img src=images/scores.png width="700" height="500">
+   <img src=images/scores.png width="700" height="500"> 
    
-   <img src=images/feature_imp_random_forest.png width="700" height="500">
-  
+   Gradient Boosting comes out to be the top performing model. Although Random Forest seems to be reasonable good with 4 times faster run-time than Gradient Boosting.
+   
+   <img src=images/feature_imp_random_forest.png width="700" height="500"> 
+   
+ The feature importance from Random Forest that played vital role in prediction makes sense, as we have seen earlier in EDA. 
+   
+More Length of Stay (LOS), more number of inpatient admissions, more number of diseases (or co-morbidity) diagnosed, more number of inpatient procedures etc means higher chances of re-admission - > which is what the model has predicted quite well. 
+   
  ### 9. Conclusion and key learning
 1. Data wrangling is fast in SQL
 2. Oversampling improves the accuracy (Logistic Regression from 0.75 to 0.86)
