@@ -1,6 +1,6 @@
 <img src=images/Hospital-Ward-image-2.jpg width="875" height="500">
 
-## Predicting patients with poor outcomes (hospital readmissions) from Medical Insurance Claims Data (No medical information except disease codes - WIP)
+## Predicting patients with poor outcomes (hospital readmissions) from Medical Insurance Claims Data Only (No medical information except disease codes) - WIP
 
 In this project, I am trying to predict patients with poor outcomes by using the frequency and duration of patient visit, their usage of prescription drugs and other products & services. I do not have access to any medical information such as vitals, test results, scans or any other kind of diagnostic tests. <i> Challenge is to predict worsening of patient's health without his/her detailed medical information.</i>
 
@@ -8,7 +8,7 @@ In this project, I am trying to predict patients with poor outcomes by using the
 ### Background
 Overall 20% of the sickest patients consume 80% of the healthcare resources, be it cost or resource occupancy. Being able to predict the outcome (usually poor outcome) of a patient early-on can not only help in taking pre-emptive efforts to manage the condition but also help in managing the workload of the healthcare system thereby reducing cost and enhancing quality of life. 
 
-### <i> Can the insurer with only limited medical information such as disease diagnosis code, billing for the equipments, services & drugs from medical claims be able to predict the poor outcome of its clients. This project is an attempt to predict this.</i>
+### <i> Can the insurer with only limited medical information such as disease diagnosis code, billing for the equipments, services & drugs from medical claims be able to predict the poor outcome of its clients. I am attemting to predict this in this project.</i>
 
 <img src=images/health_insurance.jpg width="265" height="200">
 
@@ -32,30 +32,37 @@ Data was collected from Center for Medicare and Medicaid Services (CMS), USA. It
 
 <img src=images/CMS.png width="220" height="100"> 
 
-I started with around quarter of a million patients for exploratory data analysis. After seeing some trends between predictor and the target variables, finally I ended up using one-fifth of the available data. Prime reason for using the limited amount of data was because of limitation of RAM on my machine and to limit my expenditure on Amazon Web Services (AWS) to run the models.
+I started with around a quarter of a million patients for exploratory data analysis. After seeing some trends between predictor and the target variables, finally I ended up using one-fifth of the available data. Prime reason for not using  the entire dataset was because of limitation of RAM on my machine and also to limit my expenditure on Amazon Web Services (AWS) while running the models.
 
  <img src=images/size.png width="300" height="150">
 	
-### 2. Data Wrangling & Preparation
+
+  ### 2 a. Creating PostgreSQL database
+  
+Dealing with such large data, especailly which required some cleaning, feature engineering and SQL joins (over 60 joins for the code lookups), it was best to create a SQL database.
+
+  <img src=images/postgre_database.png width="500" height="300">
+  
+  ### 2 b. Data Wrangling & Preparation
 
 As we know each patient can have multiple inpatient and outpatient visits. 
 
-When a patient visits the medical facility, he/she is assigned a principal (or admission) diagnosis code after initial assessment which resulted in patient's admission. He/she is assigned other secondary diagnosis codes which include comorbidities, complications, and other diagnoses that are documented by the attending physician.
+When a patient visits the medical facility, after initial assessment he/she is assigned a principal (or admission) diagnosis code which resulted in patient's admission. He/she is assigned other secondary diagnosis codes which include comorbidities, complications, and other diagnoses that are documented by the attending physician.
 
-There are around 20,000 (ICD9) disease, 13,000 HCPCS and 4,000 procedure codes.
+Usually each visit may result between 1 and 10 diagnose code, between 1 and 6 procedure codes, and between 1 and 45 HCPCS code.
+
+There are around 20,000 (ICD9) disease, 13,000 HCPCS and 4,000 procedure codes to choose from.
 
 <img src=images/pt1.png width="900" height="300"> 
 
 Multiple visits of a single patient.
 (Note: The raw data had diagnosis codes which I have joined to other lookup tables to get the description of each code)
 
-So, when we join patient, inpatient claims, outpatient claims table using patient_id, we get multiple rows per patient, each ranging from 10 to 60 different diagnosis/HCPCS/Procedures codes per row. When I vectorized the codes and tried to use each code as a separate feature, I got over 14,000 features (predictor variable) for my dataset (which although after using PCA I was able to reduce it to 600 features with over 82% cumulative variance).
- 
-  ### 2 a. Creating PostgreSQL database
-  
-Dealing with such large data, especailly which required some cleaning, feature engineering and SQl joins (over 60 joins) for the code lookups, it was best to create a SQL database.
+So, when we join patient, inpatient claims, outpatient claims table using patient_id, we get multiple rows per patient, each row containing between 10 and 60 different diagnosis/HCPCS/Procedures codes. 
 
-  <img src=images/postgre_database.png width="500" height="300">
+It is good to stitch the longitudinal view of the patient visits over a time-period and see how the disease progressed and/or new disease developed. 
+
+One approach to view the diagnsos codes was to vectorize them and use each code as a separate feature. Usimng this approach, I got over 14,000 features (predictor variable) for my dataset. Postgre could handle at the max 1,600 features. So, I used Principal Component Analysis (PCA) to create a new feature space (eigen vectors) and identify the important features. Using PCA, I was able to reduce my features to approximately 600 features with over 82% cumulative variance.
   
   ### 3. Exploratory Data Analysis 
   
