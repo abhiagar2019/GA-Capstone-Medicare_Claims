@@ -8,13 +8,14 @@ In this project, I am trying to predict patients with poor outcomes by using the
 ### Background
 Overall 20% of the sickest patients consume 80% of the healthcare resources, be it cost or resource occupancy. Being able to predict the outcome (usually poor outcome) of a patient early-on can not only help in taking pre-emptive efforts to manage the condition but also help in managing the workload of the healthcare system thereby reducing cost and enhancing quality of life. 
 
-### <i> Can the insurer with only limited medical information such as disease diagnosis code, billing for the equipments, services & drugs from medical claims be able to predict the poor outcome of its clients. I am attemting to predict this in this project.</i>
+### <i> Can the insurer with only limited medical information such as disease diagnosis code, billing for the equipments, services & drugs from medical claims be able to predict the poor outcome of its clients. I am attempting to predict this in this project.</i>
 
 <img src=images/health_insurance.jpg width="265" height="200">
 
 
 Steps:
 1. Data Collection
+
 2 a. Creating PostgreSQL database
 2 b. Data Wrangling & Preparation
 3. Feature Engineering
@@ -67,7 +68,7 @@ One approach to view the diagnsos codes was to vectorize them and use each code 
   ### 3. Feature Engineering
   
   After inital explonatory data analysis, I calculated some fields such as:
-  <b> 
+  
   1. Length of stay (LOS)
   2. Readmissions within 30, 60 and 90 days
   3. Total number of inpatient admission
@@ -77,7 +78,6 @@ One approach to view the diagnsos codes was to vectorize them and use each code 
   7. Total medical equipment/supplies/services billed for
   8. Total cost incurred for a patient (insurer + copay + aid)
   9. Change in cost, number of visits, number of diagnosis from one year to another etc..
-  </b> 
   
   <img src=images/summarized_by_patient.png width="900" height="250">
   
